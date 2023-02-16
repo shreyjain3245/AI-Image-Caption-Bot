@@ -3,52 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Image Captioning</title>
-    <link rel='shortcut icon' type='image/x-icon' href='/static/fav.webp' />
+    <link href='/static/fav.webp' rel='shortcut icon' type='image/x-icon'/>
 
-    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/5f3f547070.js"></script>
 </head>
 
 <body style="margin: 0px;">
-    <div>
+<div>
     <div class="container">
-    <h2  style="margin-top: 0px; margin-bottom: 0px;"><span class="heading_font">Image Caption Bot</span></h2>
-     <h3 class="description"><p>A Web App which helps to predict the caption of an image using Deep Learning.  <br></p></h3></div>
-        <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
-            <br>
-           <br>
-            <input type="file" accept="image/*" name="image" id="second"  onchange="loadFile(event)" required="required" style="color: #4a5657;font-family: 'Pacifico', cursive; background-color:white; text-align: center; border-color: #2d0758; width:375px;">
+        <h2 style="margin-top: 0px; margin-bottom: 0px;"><span class="heading_font">Image Caption Bot</span></h2>
+        <h3 class="description"><p>A Web App which helps to predict the caption of an image using Deep Learning. <br>
+        </p></h3>
+    </div>
+    <form action="{{ url_for('predict')}}" enctype="multipart/form-data" method="post">
+        <br>
+        <br>
+        <input accept="image/*" id="second" name="image" onchange="loadFile(event)" required="required"
+               style="color: #4a5657;font-family: 'Pacifico', cursive; background-color:white; text-align: center; border-color: #2d0758; width:375px;"
+               type="file">
 
-            <p><img id="output" width="200" src="{{image}}"/></p>
+        <p><img id="output" src="{{image}}" width="200"/></p>
 
-<script>
+        <script>
   var loadFile = function(event) {
     var image = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
   };
-</script>
 
 
-            <input id="sub" type="submit" class="my-cta-button" value="Predict">
+
+        </script>
 
 
-        </form>
-        <br>
-      
-      <h4 class="prediction" style="margin-top:5px;">{{ prediction_text }}<h4>
-<br><br>
+        <input class="my-cta-button" id="sub" type="submit" value="Predict">
+
+
+    </form>
+    <br>
+
+    <h4 class="prediction" style="margin-top:5px;">{{ prediction_text }}<h4>
+        <br><br>
+</div>
+<div class="footer">
+    <div class="contact" style="margin-top:12px">
+        <a href="https://github.com/shreyjain3245" style=" color: white;" target="_blank"><i
+                aria-hidden="true" class="fab fa-github fa-lg contact-icon"></i></a>
+        <a href="https://www.linkedin.com/in/shreyjain3245/" style="color: white;" target="_blank"><i
+                aria-hidden="true" class="fab fa-linkedin fa-lg contact-icon"></i></a>
     </div>
-        <div class="footer">
-        <div class="contact" style="margin-top:12px">
-               <a target="_blank" href="https://github.com/runwalakshat5" style=" color: white;"><i class="fab fa-github fa-lg contact-icon" aria-hidden="true"></i></a>
-               <a target="_blank" href="https://www.linkedin.com/in/akshatrunwal/" style="color: white;"><i class="fab fa-linkedin fa-lg contact-icon" aria-hidden="true"></i></a>
-           </div>
-          <p style="margin-bottom:5px;margin-top:5px">Made with ❤️ by Akshat Runwal.</p>
-        </div>
+    <p style="margin-bottom:5px;margin-top:5px">Made with ❤️ by Shrey Jain.</p>
+</div>
 
 
-    <style>
+<style>
         body {
 
             text-align: center;
@@ -195,7 +204,10 @@ font-family: 'Pacifico', cursive;
 }
 
 
-    </style>
+
+
+
+</style>
 </body>
 
 </html>
