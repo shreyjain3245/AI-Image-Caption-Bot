@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/static/fav.webp' />
+
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="margin: 0px;">
+    <div>
+    <div class="container">
+    <h2  style="margin-top: 0px; margin-bottom: 0px;"><span class="heading_font">Image Caption Bot</span></h2>
+     <h3 class="description"><p>A Web App which helps to predict the caption of an image using Deep Learning.  <br></p></h3></div>
+        <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+            <br>
+           <br>
+            <input type="file" accept="image/*" name="image" id="second"  onchange="loadFile(event)" required="required" style="color: #4a5657;font-family: 'Pacifico', cursive; background-color:white; text-align: center; border-color: #2d0758; width:375px;">
+
+            <p><img id="output" width="200" src="{{image}}"/></p>
+
+<script>
+  var loadFile = function(event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+
+
+            <input id="sub" type="submit" class="my-cta-button" value="Predict">
+
+
+        </form>
+        <br>
+      
+      <h4 class="prediction" style="margin-top:5px;">{{ prediction_text }}<h4>
+<br><br>
+    </div>
+        <div class="footer">
+        <div class="contact" style="margin-top:12px">
+               <a target="_blank" href="https://github.com/runwalakshat5" style=" color: white;"><i class="fab fa-github fa-lg contact-icon" aria-hidden="true"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/akshatrunwal/" style="color: white;"><i class="fab fa-linkedin fa-lg contact-icon" aria-hidden="true"></i></a>
+           </div>
+          <p style="margin-bottom:5px;margin-top:5px">Made with ❤️ by Akshat Runwal.</p>
+        </div>
+
+
+    <style>
+        body {
+
+            text-align: center;
+            padding: 0px;
+
+            background-size:100%;
+            background-position: center;
+            background-size: cover;
+
+            height:100%;
+            width:100%;
+            max-width: 100%;
+
+                font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+
+        }
+        .my-cta-button {
+    background: #f9f9f9;
+    border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+    margin-top: 10px;
+    padding: 10px 36px;
+    color: #000000;
+    display: inline-block;
+    font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+input[type=file]::file-selector-button {
+  border: 2px solid black;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: white;
+  color:black;
+  transition: 1s;
+  font-family: 'Pacifico', cursive; font-size: 25px;
+  border-radius: 24px;
+  height: 45px;
+}
+.prediction{
+color: #4d089a;
+font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    background-color:white;
+
+}
+
+.my-cta-button:active {
+    box-shadow: 0 0;
+}
+.my-cta-button:hover {
+    color: #4d089a;
+    border: 2px solid #4d089a;
+}
+
+        .description p {
+    color: #ffffff;
+    font-family: 'Pacifico', cursive;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+        .heading_font {
+        color: #ffffff;
+        font-family: 'Pacifico', cursive;
+        font-size: 30px;
+        font-weight: normal;
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#0bebf6 ;
+  opacity: 1; /* Firefox */
+}
+
+        .container{
+
+            padding: 5px;
+        position: relative;
+        background: linear-gradient( 45deg, #000000,#372f84, #000000);
+        background-size: 500% 500%;
+
+
+        }
+ input:focus::placeholder {
+  color: transparent;
+}
+
+
+        html {
+        height:100%;
+            max-width: 100%;
+
+        }
+
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 24px;
+            height: 45px;
+            font-size: 15px;
+            text-align: center;
+            font-family: 'Pacifico', cursive; font-size: 25px;
+            border-color:#000000;
+            border:solid;
+
+        }
+
+        #third {
+            border-radius: 24px;
+            height: 45px;
+            width: 545px;
+            font-size: 20px;
+            text-align: center;
+       color: #4d089a;font-family: 'Pacifico', cursive; font-size: 25px;
+       border-color:#4d089a;
+       border:solid;
+
+
+        }
+        input:focus{
+    outline: none;
+}
+ select:focus{
+    outline: none;
+}
+  .footer {
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+   background: linear-gradient( 45deg, #000000,#372f84, #000000);
+        background-size: 500% 500%;
+   color: #ffffff;
+        font-family: 'Pacifico', cursive;
+        font-size: 15px;
+        font-weight: normal;
+  text-align: center;
+}
+
+
+    </style>
+</body>
+
+</html>
