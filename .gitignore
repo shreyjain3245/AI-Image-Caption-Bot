@@ -1,2 +1,8 @@
 *.xml
 *.iml
+/descriptions_1.txt
+/Image Captioning Project.py
+/static/
+/saved/
+/Data/
+/.ipynb_checkpoints/
