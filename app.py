@@ -3,7 +3,6 @@ import os
 import numpy as np
 from flask import Flask, render_template, request
 from keras.applications.resnet import preprocess_input
-from keras.layers import *
 from keras.models import *
 from keras.preprocessing import image
 from keras.preprocessing.sequence import pad_sequences

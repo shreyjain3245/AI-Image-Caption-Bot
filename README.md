@@ -8,6 +8,7 @@ the highest probability word could be fed again to LSTM as sequential partial ca
 the ground truth always to predict the next word).
 
 The dataset used for training was Flickr 8k dataset : https://www.kaggle.com/shadabhussain/flickr8k
+The dataset used for glove.6B.50d is: https://www.kaggle.com/datasets/watts2/glove6b50dtxt
 
 The bot is useful -
 
